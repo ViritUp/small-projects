@@ -1,0 +1,130 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: montserrat, arial, verdana;
+  padding: 3rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(2,0,36);
+  background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,121,102,1) 51%, rgba(0,212,255,1) 100%);
+  height: 100vh;
+}
+
+.card {
+  background: white;
+  border: 0 none;
+  border-radius: 3px;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+  padding: 20px 30px;
+  width: 400px;
+  margin: 0 auto;
+  animation: scale 400ms ease-in-out forwards;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: .5rem;
+  gap: .25em;
+}
+
+.form-group:last-child {
+  margin: 0;
+}
+
+.form-group > label {
+  font-weight: bold;
+  font-size: .8em;
+  color: #333;
+}
+
+.form-group > input {
+  font-family: montserrat, arial, verdana;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  color: #2c3e50;
+  font-size: 13px;
+}
+
+input::placeholder {
+  font-family: montserrat, arial, verdana;
+}
+
+.step-title {
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+button {
+  width: 100px;
+  background: #1b9b7d;
+  font-family: montserrat, arial, verdana;
+  font-weight: bold;
+  color: #fff;
+  transition: 150ms;
+  border: 0 none;
+  border-radius: 1px;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 10px 5px;
+}
+
+button:hover, button:focus {
+  box-shadow: 0 0 0 2px #55d6b8, 0 0 0 3px #55d6b8;
+  color: #fff;
+}
+
+.card.active {
+  animation: slide 400ms ease-in-out both;
+}
+
+
+.multi-step-form {
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.hide {
+  display: none;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(.75);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
